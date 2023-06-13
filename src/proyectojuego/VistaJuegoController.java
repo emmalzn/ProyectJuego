@@ -1,7 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
  */
 package proyectojuego;
 
@@ -20,6 +17,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+/**
+ * Controlador para la vista del juego.
+ */
 public class VistaJuegoController implements Initializable {
 
     @FXML
@@ -35,6 +35,7 @@ public class VistaJuegoController implements Initializable {
     @FXML
     private ProgressBar barraProgreso;
 
+    // Variables que seran usadas en el código
     private int solucionAleatorio;
     private int numeroAleatorio1;
     private int numeroAleatorio2;
@@ -43,13 +44,13 @@ public class VistaJuegoController implements Initializable {
     private int contadorAciertos = 0;
     private int contadorErrores = 0;
     private AnchorPane menuImagen;
-
     private Timeline timeline;
     private int segundosTotales = 10;
     private int segundosRestantes = segundosTotales;
 
     @FXML
 
+    // Metodo que inicia la ejecucion del juego
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         generarNumeroAleatorio();
@@ -68,6 +69,7 @@ public class VistaJuegoController implements Initializable {
         timeline.play();
     }
 
+    // Eventos que seran usados para interactuar con el juego como butones
     @FXML
     private void Clic_Mas(ActionEvent event) {
         operador = '+';
@@ -92,6 +94,11 @@ public class VistaJuegoController implements Initializable {
         evaluaOperador();
     }
 
+    /**
+     * Genera números aleatorios para que el jugador adivine la operación.
+     * Muestra los números aleatorios en la pantalla para que el jugador los
+     * vea.
+     */
     private void generarNumeroAleatorio() {
         Random random = new Random();
         numeroAleatorio1 = random.nextInt(16) + 1;
@@ -118,6 +125,9 @@ public class VistaJuegoController implements Initializable {
         resultado1.setText("" + solucionAleatorio);
     }
 
+    /**
+     * Evalúa el operador seleccionado por el jugador y confirma si es correcto en la operación.
+     */
     private void evaluaOperador() {
         switch (operador) {
             case '+':
@@ -151,20 +161,28 @@ public class VistaJuegoController implements Initializable {
         errores.setText("" + contadorErrores);
     }
 
+    /**
+     * Maneja el evento de cambio de número y genera un nuevo número aleatorio.
+     */
+    private void manejarCambioNumero(ActionEvent event) {
+        generarNumeroAleatorio();
+    }
+
+     /**
+     * Maneja el evento de finalización del tiempo y detiene la barra de progreso.
+     */
     private void manejarFinTiempo(ActionEvent event) {
         barraProgreso.setProgress(0.0);
         timeline.stop();
-        // Aquí puedes agregar la lógica para el final del tiempo (30 segundos)
-    }
 
+    }
+     /**
+     * Actualiza el progreso de la barra y el tiempo restante.
+     */
     private void actualizarProgreso(ActionEvent event) {
         segundosRestantes--;
         double progreso = (double) segundosRestantes / segundosTotales;
         barraProgreso.setProgress(progreso);
-    }
-
-    private void manejarCambioNumero(ActionEvent event) {
-        generarNumeroAleatorio();
     }
 
 }
