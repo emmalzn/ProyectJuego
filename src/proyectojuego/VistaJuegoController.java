@@ -7,6 +7,8 @@ package proyectojuego;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +16,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.util.Random;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 public class VistaJuegoController implements Initializable {
 
@@ -36,12 +41,31 @@ public class VistaJuegoController implements Initializable {
     private int solucion;
     private char operador = ' ';
     private int contadorAciertos = 0;
-    private int contadorErrores = -1;
+    private int contadorErrores = 0;
+    private AnchorPane menuImagen;
+
+    private Timeline timeline;
+    private int segundosTotales = 10;
+    private int segundosRestantes = segundosTotales;
+
+    @FXML
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         generarNumeroAleatorio();
+
+        // Configurar la ProgressBar
+        barraProgreso.setProgress(1.0);
+        barraProgreso.setMaxWidth(Double.MAX_VALUE);
+        barraProgreso.setStyle("-fx-accent: FFC93C");
+
+        // Configurar el Timeline para repetir cada segundo
+        timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), this::actualizarProgreso),
+                new KeyFrame(Duration.seconds(6), this::manejarCambioNumero));
+        timeline.setCycleCount(segundosTotales);
+        timeline.setOnFinished(this::manejarFinTiempo);
+        timeline.play();
     }
 
     @FXML
@@ -89,13 +113,9 @@ public class VistaJuegoController implements Initializable {
                 break;
         }
 
-        
-            num1.setText("" + numeroAleatorio1);
-            num2.setText("" + numeroAleatorio2);
-            resultado1.setText("" + solucionAleatorio);
-        
-
-        evaluaOperador();
+        num1.setText("" + numeroAleatorio1);
+        num2.setText("" + numeroAleatorio2);
+        resultado1.setText("" + solucionAleatorio);
     }
 
     private void evaluaOperador() {
@@ -110,7 +130,13 @@ public class VistaJuegoController implements Initializable {
                 solucion = numeroAleatorio1 * numeroAleatorio2;
                 break;
             case '/':
-                int solucion = numeroAleatorio1 * numeroAleatorio2;
+                int division = numeroAleatorio1 * numeroAleatorio2;
+
+                if (numeroAleatorio2 >= numeroAleatorio1) {
+                    solucion = division / numeroAleatorio1;
+                } else if (numeroAleatorio1 >= numeroAleatorio2) {
+                    solucion = division / numeroAleatorio2;
+                }
 
                 break;
         }
@@ -124,4 +150,21 @@ public class VistaJuegoController implements Initializable {
         aciertos.setText("" + contadorAciertos);
         errores.setText("" + contadorErrores);
     }
+
+    private void manejarFinTiempo(ActionEvent event) {
+        barraProgreso.setProgress(0.0);
+        timeline.stop();
+        // Aquí puedes agregar la lógica para el final del tiempo (30 segundos)
+    }
+
+    private void actualizarProgreso(ActionEvent event) {
+        segundosRestantes--;
+        double progreso = (double) segundosRestantes / segundosTotales;
+        barraProgreso.setProgress(progreso);
+    }
+
+    private void manejarCambioNumero(ActionEvent event) {
+        generarNumeroAleatorio();
+    }
+
 }

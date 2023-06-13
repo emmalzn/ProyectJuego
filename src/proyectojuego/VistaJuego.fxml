@@ -4,16 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="proyectojuego.VistaJuegoController">
+<AnchorPane id="AnchorPane" fx:id="menuImagen" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="proyectojuego.VistaJuegoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86e5ff" height="229.0" layoutX="199.0" layoutY="111.0" stroke="#86e5ff" strokeType="INSIDE" width="422.0" />
       <ProgressBar fx:id="barraProgreso" layoutX="245.0" layoutY="26.0" prefHeight="33.0" prefWidth="330.0" progress="0.0" />
-      <TextField fx:id="aciertos" editable="false" layoutX="147.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" />
-      <TextField fx:id="errores" editable="false" layoutX="646.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" />
+      <TextField fx:id="aciertos" editable="false" layoutX="171.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" />
+      <TextField fx:id="errores" editable="false" layoutX="637.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" />
       <Label fx:id="num1" layoutX="219.0" layoutY="136.0" text="0" textFill="#8d088d">
          <font>
             <Font size="70.0" />
@@ -39,5 +41,20 @@
       <Button layoutX="422.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Dividir" prefHeight="50.0" prefWidth="50.0" text="/" />
       <Button layoutX="337.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Menos" prefHeight="50.0" prefWidth="50.0" text="-" />
       <Button layoutX="511.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Multiplicar" prefHeight="50.0" prefWidth="50.0" text="*" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="114.0" layoutY="18.0">
+         <image>
+            <Image url="@Dedo_arriba.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="587.0" layoutY="18.0">
+         <image>
+            <Image url="@pngwing%201fondo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="35.0" layoutY="18.0">
+         <image>
+            <Image url="@Menu.imagen.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
