@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/controladores/VistaInicialController.java</file>
+            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/vistas/VistaResultado.fxml</file>
+            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/controladores/VistaResultadoController.java</file>
             <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/proyectojuego/Main.java</file>
-            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/proyectojuego/VistaResultado.fxml</file>
-            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/proyectojuego/VistaResultadoController.java</file>
+            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/vistas/VistaJuego.fxml</file>
+            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/controladores/VistaJuegoController.java</file>
+            <file>file:/C:/Users/emmal/OneDrive/Documentos/NetBeansProjects/ProyectoJuego/src/vistas/VistaInicial.fxml</file>
         </group>
     </open-files>
 </project-private>
