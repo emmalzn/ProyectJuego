@@ -1,6 +1,6 @@
 /*
  */
-package proyectojuego;
+package controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.util.Random;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -34,6 +37,8 @@ public class VistaJuegoController implements Initializable {
     private Label resultado1;
     @FXML
     private ProgressBar barraProgreso;
+    
+
 
     // Variables que seran usadas en el código
     private int solucionAleatorio;
@@ -43,12 +48,16 @@ public class VistaJuegoController implements Initializable {
     private char operador = ' ';
     private int contadorAciertos = 0;
     private int contadorErrores = 0;
+    @FXML
     private AnchorPane menuImagen;
     private Timeline timeline;
     private int segundosTotales = 10;
     private int segundosRestantes = segundosTotales;
-
     @FXML
+    private ImageView bien;
+    @FXML
+    private MenuItem Clic_reiniciar;
+
 
     // Metodo que inicia la ejecucion del juego
     @Override
@@ -92,6 +101,10 @@ public class VistaJuegoController implements Initializable {
     private void Clic_Multiplicar(ActionEvent event) {
         operador = '*';
         evaluaOperador();
+    }
+    
+     @FXML
+    private void Clic_cerrar(ActionEvent event) {
     }
 
     /**

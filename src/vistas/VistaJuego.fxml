@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="menuImagen" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectojuego.VistaJuegoController">
+<AnchorPane id="AnchorPane" fx:id="menuImagen" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VistaJuegoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86e5ff" height="229.0" layoutX="199.0" layoutY="111.0" stroke="#86e5ff" strokeType="INSIDE" width="422.0" />
       <ProgressBar fx:id="barraProgreso" layoutX="245.0" layoutY="26.0" prefHeight="33.0" prefWidth="330.0" progress="0.0" />
