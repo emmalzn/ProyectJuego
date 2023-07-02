@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controladores.VistaInstruccionesController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="81.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="77.0" fitWidth="75.0" layoutX="601.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="109.0" layoutX="164.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="75.0" layoutX="615.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="52.0" fitWidth="64.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera4.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="81.0" layoutX="612.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="75.0" layoutX="21.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/opera1.png" />
+               </image>
+            </ImageView>
+            <ButtonBar layoutX="273.0" layoutY="7.0" prefHeight="41.0" prefWidth="403.0">
+               <buttons>
+                  <Button fx:id="BtInicio" mnemonicParsing="false" onAction="#inicio" prefHeight="31.0" style="-fx-background-color: #5BC0F8;" text="Inicio">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtSoporte" mnemonicParsing="false" onAction="#soporte" style="-fx-background-color: #5BC0F8;" text="Soporte">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtSalir" mnemonicParsing="false" onAction="#salirApp" prefHeight="31.0" prefWidth="143.0" style="-fx-background-color: #5BC0F8;" text="Salir">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5bc0f8" height="297.0" layoutX="116.0" layoutY="105.0" stroke="#5bc0f8" strokeType="INSIDE" width="499.0" />
+            <Label layoutX="276.0" layoutY="112.0" prefHeight="21.0" prefWidth="179.0" text="Instrucciones">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="164.0" layoutY="163.0" />
+            <Text layoutX="135.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deberás seleccionar el operador correcto que complete la operación," />
+            <Text layoutX="135.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" si aciertas recibirás un punto, si fallas se restara un punto a la " />
+            <Text layoutX="138.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="puntuación final. " />
+            <ImageView fitHeight="134.0" fitWidth="391.0" layoutX="226.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/Imag1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

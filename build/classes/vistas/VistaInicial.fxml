@@ -5,9 +5,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controladores.VistaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VistaInicialController">
    <children>
       <ImageView fitHeight="165.0" fitWidth="481.0" layoutX="118.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -49,12 +49,24 @@
             <Image url="@../imagenes/opera1.png" />
          </image>
       </ImageView>
-      <Button fx:id="iniciarJuego" layoutX="309.0" layoutY="280.0" mnemonicParsing="false" onAction="#inicioJuego" prefHeight="31.0" prefWidth="99.0" style="-fx-background-color: #5BC0F8;" text="Iniciar" />
+      <Button fx:id="iniciarJuego" layoutX="309.0" layoutY="280.0" mnemonicParsing="false" onAction="#inicioJuego" prefHeight="31.0" prefWidth="99.0" style="-fx-background-color: #5BC0F8;" text="Iniciar">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Button>
       <ButtonBar layoutX="273.0" layoutY="7.0" prefHeight="41.0" prefWidth="403.0">
          <buttons>
-            <Button mnemonicParsing="false" onAction="#Instrucciones" prefHeight="31.0" style="-fx-background-color: #5BC0F8;" text="Instrucciones" />
-            <Button mnemonicParsing="false" onAction="#soporte" style="-fx-background-color: #5BC0F8;" text="Soporte" />
-            <Button mnemonicParsing="false" onAction="#salirApp" prefHeight="31.0" prefWidth="143.0" style="-fx-background-color: #5BC0F8;" text="Salir" />
+            <Button fx:id="instrucciones" mnemonicParsing="false" onAction="#Instrucciones" prefHeight="31.0" style="-fx-background-color: #5BC0F8;" text="Instrucciones">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Button>
+            <Button fx:id="soporte" mnemonicParsing="false" onAction="#soporte" style="-fx-background-color: #5BC0F8;" text="Soporte">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Button>
+            <Button fx:id="salir" mnemonicParsing="false" onAction="#salirApp" prefHeight="31.0" prefWidth="143.0" style="-fx-background-color: #5BC0F8;" text="Salir">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Button>
          </buttons>
       </ButtonBar>
    </children>

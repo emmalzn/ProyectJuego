@@ -40,8 +40,10 @@ public class VistaJuegoController implements Initializable {
     private Label resultado1;
     @FXML
     private ProgressBar barraProgreso;
-    
-
+    @FXML
+    private AnchorPane menuImagen;
+    @FXML
+    private ImageView bien;
 
     // Variables que seran usadas en el código
     private int solucionAleatorio;
@@ -51,16 +53,13 @@ public class VistaJuegoController implements Initializable {
     private char operador = ' ';
     private int contadorAciertos = 0;
     private int contadorErrores = 0;
-    @FXML
-    private AnchorPane menuImagen;
     private Timeline timeline;
     private int segundosTotales = 7;
     private int segundosRestantes = segundosTotales;
     @FXML
-    private ImageView bien;
+    private MenuItem BtCerrar;
     @FXML
-    private MenuItem Clic_reiniciar;
-
+    private MenuItem BtReiniciar;
 
     // Metodo que inicia la ejecucion del juego
     @Override
@@ -79,6 +78,7 @@ public class VistaJuegoController implements Initializable {
         timeline.setCycleCount(segundosTotales);
         timeline.setOnFinished(this::manejarFinTiempo);
         timeline.play();
+
     }
 
     // Eventos que seran usados para interactuar con el juego como butones
@@ -105,8 +105,8 @@ public class VistaJuegoController implements Initializable {
         operador = '*';
         evaluaOperador();
     }
-    
-     @FXML
+
+    @FXML
     private void Clic_cerrar(ActionEvent event) {
     }
 
@@ -136,13 +136,23 @@ public class VistaJuegoController implements Initializable {
                 break;
         }
 
-        num1.setText("" + numeroAleatorio1);
-        num2.setText("" + numeroAleatorio2);
-        resultado1.setText("" + solucionAleatorio);
+        if (operacion == 4) {
+            
+            num1.setText("" + solucionAleatorio);
+            num2.setText("" + numeroAleatorio2);
+            resultado1.setText("" + numeroAleatorio1);
+
+        } else {
+            num1.setText("" + numeroAleatorio1);
+            num2.setText("" + numeroAleatorio2);
+            resultado1.setText("" + solucionAleatorio);
+        }
+
     }
 
     /**
-     * Evalúa el operador seleccionado por el jugador y confirma si es correcto en la operación.
+     * Evalúa el operador seleccionado por el jugador y confirma si es correcto
+     * en la operación.
      */
     private void evaluaOperador() {
         switch (operador) {
@@ -184,35 +194,59 @@ public class VistaJuegoController implements Initializable {
         generarNumeroAleatorio();
     }
 
-     /**
-     * Maneja el evento de finalización del tiempo y detiene la barra de progreso.
+    /**
+     * Maneja el evento de finalización del tiempo y detiene la barra de
+     * progreso.
      */
     private void manejarFinTiempo(ActionEvent event) {
         barraProgreso.setProgress(0.0);
         timeline.stop();
-        
-                try {
-            // Cargar el archivo FXML de la vista de juego
-            Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaResultado.fxml"));
-            
-            // Crear una nueva escena con la vista de juego
-            Scene scene = new Scene(root);
-            
-            // Obtener la ventana actual y establecer la nueva escena
-            Stage stage = (Stage) menuImagen.getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/VistaResultado.fxml"));
+            Parent vistaResultado = loader.load();
+            VistaResultadoController vistaResultadoController = loader.getController();
+
+            vistaResultadoController.setAciertos(contadorAciertos);
+            vistaResultadoController.setErrores(contadorErrores);
+
+            Scene scene = new Scene(vistaResultado);
+
+            Stage stage = (Stage) aciertos.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
         }
 
     }
-     /**
+
+    public int getContadorAciertos() {
+        return contadorAciertos;
+    }
+
+    public int getContadorErrores() {
+        return contadorErrores;
+    }
+
+    /**
      * Actualiza el progreso de la barra y el tiempo restante.
      */
     private void actualizarProgreso(ActionEvent event) {
         segundosRestantes--;
         double progreso = (double) segundosRestantes / segundosTotales;
         barraProgreso.setProgress(progreso);
+    }
+
+    void setAciertos(int aciertos) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setErrores(int errores) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @FXML
+    private void Clic_reiniciar(ActionEvent event) {
     }
 
 }

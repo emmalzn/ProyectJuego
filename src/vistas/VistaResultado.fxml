@@ -26,8 +26,14 @@
             <Font name="System Bold Italic" size="23.0" />
          </font>
       </Label>
-      <Button fx:id="BtReiniciar" layoutX="210.0" layoutY="301.0" mnemonicParsing="false" onAction="#reiniciarVistaResultado" prefWidth="80.0" text="Reiniciar" />
-      <Button fx:id="BtErorres" layoutX="412.0" layoutY="301.0" mnemonicParsing="false" onAction="#salirVistaResultado" prefWidth="80.0" text="Salir" />
+      <Button fx:id="BtReiniciar" layoutX="210.0" layoutY="301.0" mnemonicParsing="false" onAction="#reiniciarVistaResultado" prefWidth="80.0" style="-fx-background-color: FFC93C;" text="Reiniciar">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font></Button>
+      <Button fx:id="BtSalir" layoutX="412.0" layoutY="301.0" mnemonicParsing="false" onAction="#salirVistaResultado" prefWidth="80.0" style="-fx-background-color: FFC93C;" text="Salir">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font></Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="31.0" layoutX="160.0" layoutY="236.0" stroke="WHITE" strokeType="INSIDE" width="29.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="31.0" layoutX="514.0" layoutY="236.0" stroke="WHITE" strokeType="INSIDE" width="29.0" />
       <Label fx:id="ResultAciertos" layoutX="170.0" layoutY="241.0" text="0" />

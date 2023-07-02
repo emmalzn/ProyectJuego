@@ -22,73 +22,36 @@ import javafx.stage.Stage;
  *
  * @author emmal
  */
-public class VistaInicialController implements Initializable {
+public class VistaSoporteController implements Initializable {
 
     @FXML
-    private Button iniciarJuego;
+    private Button BtInicio;
     @FXML
-    private Button instrucciones;
+    private Button BtInstrucciones;
     @FXML
-    private Button soporte;
+    private Button Btsalir;
     @FXML
-    private Button salir;
+    private Button BtEnviar;
 
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    @FXML
-    private void inicioJuego(ActionEvent event) {
-                try {
-            // Cargar el archivo FXML de la vista de juego
-            Parent vistaJuego = FXMLLoader.load(getClass().getResource("/vistas/VistaJuego.fxml"));
-            
-            // Crear una nueva escena con la vista de juego
-            Scene scene = new Scene(vistaJuego);
-            
-            // Obtener la ventana actual y establecer la nueva escena
-            Stage stage = (Stage) iniciarJuego.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-        }
-        
     }
 
     @FXML
     private void Instrucciones(ActionEvent event) {
-         try {
+        try {
             // Cargar el archivo FXML de la vista de juego
             Parent vistaJuego = FXMLLoader.load(getClass().getResource("/vistas/VistaInstrucciones.fxml"));
-            
-            // Crear una nueva escena con la vista de juego
-            Scene scene = new Scene(vistaJuego);
-            
-            // Obtener la ventana actual y establecer la nueva escena
-            Stage stage = (Stage) instrucciones.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-        }
-    }
 
-    @FXML
-    private void soporte(ActionEvent event) {
-         try {
-            // Cargar el archivo FXML de la vista de juego
-            Parent vistaJuego = FXMLLoader.load(getClass().getResource("/vistas/VistaSoporte.fxml"));
-            
             // Crear una nueva escena con la vista de juego
             Scene scene = new Scene(vistaJuego);
-            
+
             // Obtener la ventana actual y establecer la nueva escena
-            Stage stage = (Stage) soporte.getScene().getWindow();
+            Stage stage = (Stage) BtInstrucciones.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
@@ -97,6 +60,41 @@ public class VistaInicialController implements Initializable {
 
     @FXML
     private void salirApp(ActionEvent event) {
+
     }
-    
+
+    @FXML
+    private void inicio(ActionEvent event) {
+        try {
+            // Cargar el archivo FXML de la vista de juego
+            Parent vistaJuego = FXMLLoader.load(getClass().getResource("/vistas/VistaInicial.fxml"));
+
+            // Crear una nueva escena con la vista de juego
+            Scene scene = new Scene(vistaJuego);
+
+            // Obtener la ventana actual y establecer la nueva escena
+            Stage stage = (Stage) BtInicio.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+        }
+    }
+
+    @FXML
+    private void Enviar(ActionEvent event) {
+         try {
+            // Cargar el archivo FXML de la vista de juego
+            Parent vistaJuego = FXMLLoader.load(getClass().getResource("/vistas/VistaSoporte.fxml"));
+
+            // Crear una nueva escena con la vista de juego
+            Scene scene = new Scene(vistaJuego);
+
+            // Obtener la ventana actual y establecer la nueva escena
+            Stage stage = (Stage) BtEnviar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+        }         
+    }
+
 }

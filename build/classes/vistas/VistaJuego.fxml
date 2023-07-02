@@ -17,8 +17,8 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#86e5ff" height="229.0" layoutX="199.0" layoutY="111.0" stroke="#86e5ff" strokeType="INSIDE" width="422.0" />
       <ProgressBar fx:id="barraProgreso" layoutX="245.0" layoutY="26.0" prefHeight="33.0" prefWidth="330.0" progress="0.0" />
-      <TextField fx:id="aciertos" editable="false" layoutX="171.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" />
-      <TextField fx:id="errores" editable="false" layoutX="637.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" />
+      <TextField fx:id="aciertos" editable="false" layoutX="171.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" text="0" />
+      <TextField fx:id="errores" editable="false" layoutX="637.0" layoutY="26.0" prefHeight="33.0" prefWidth="40.0" text="0" />
       <Label fx:id="num1" layoutX="219.0" layoutY="136.0" text="0" textFill="#8d088d">
          <font>
             <Font size="70.0" />
@@ -40,18 +40,30 @@
          </font>
       </Label>
       <TextField editable="false" layoutX="310.0" layoutY="171.0" prefHeight="33.0" prefWidth="40.0" />
-      <Button layoutX="248.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Mas" prefHeight="50.0" prefWidth="50.0" text="+" />
-      <Button layoutX="422.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Dividir" prefHeight="50.0" prefWidth="50.0" text="/" />
-      <Button layoutX="337.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Menos" prefHeight="50.0" prefWidth="50.0" text="-" />
-      <Button layoutX="511.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Multiplicar" prefHeight="50.0" prefWidth="50.0" text="*" />
+      <Button layoutX="248.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Mas" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: FFC93C;" text="+">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Button>
+      <Button layoutX="422.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Dividir" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: FFC93C;" text="/">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Button>
+      <Button layoutX="337.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Menos" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: FFC93C;" text="-">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font></Button>
+      <Button layoutX="511.0" layoutY="239.0" mnemonicParsing="false" onAction="#Clic_Multiplicar" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: FFC93C;" text="*">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Button>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="114.0" layoutY="18.0">
          <image>
-            <Image url="@../../imagenes/Dedo_arriba.png" />
+            <Image url="@../imagenes/Dedo_arriba.png" />
          </image>
       </ImageView>
       <ImageView fx:id="bien" fitHeight="50.0" fitWidth="50.0" layoutX="587.0" layoutY="18.0">
          <image>
-            <Image url="@../../imagenes/pngwing%201fondo.png" />
+            <Image url="@../imagenes/pngwing%201fondo.png" />
          </image>
       </ImageView>
       <MenuButton layoutX="33.0" layoutY="28.0" mnemonicParsing="false" style="-fx-background-color: #86e5ff;">
