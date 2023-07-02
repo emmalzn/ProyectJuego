@@ -10,6 +10,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.shape.Rectangle;
 
 /**
  * FXML Controller class
@@ -17,6 +20,15 @@ import javafx.fxml.Initializable;
  * @author emmal
  */
 public class VistaResultadoController implements Initializable {
+
+    @FXML
+    private Button BtReiniciar;
+    @FXML
+    private Button BtErorres;
+    @FXML
+    private Label ResultAciertos;
+    @FXML
+    private Label ResultErrores;
 
     /**
      * Initializes the controller class.

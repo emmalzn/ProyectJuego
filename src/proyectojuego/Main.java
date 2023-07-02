@@ -19,11 +19,12 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("VistaJuego.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaInicial.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+   
         stage.show();
     }
 

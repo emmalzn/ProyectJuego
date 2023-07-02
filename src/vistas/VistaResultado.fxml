@@ -6,8 +6,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controladores.VistaResultadoController">
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #0081C9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VistaResultadoController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5bc0f8" height="53.0" layoutX="250.0" layoutY="69.0" stroke="#5bc0f8" strokeType="INSIDE" width="200.0" />
       <Label layoutX="284.0" layoutY="76.0" text="Resultado" textFill="WHITE">
@@ -27,11 +26,11 @@
             <Font name="System Bold Italic" size="23.0" />
          </font>
       </Label>
-      <Button layoutX="210.0" layoutY="301.0" mnemonicParsing="false" onAction="#reiniciarVistaResultado" prefWidth="80.0" text="Reiniciar" />
-      <Button layoutX="412.0" layoutY="301.0" mnemonicParsing="false" onAction="#salirVistaResultado" prefWidth="80.0" text="Salir" />
+      <Button fx:id="BtReiniciar" layoutX="210.0" layoutY="301.0" mnemonicParsing="false" onAction="#reiniciarVistaResultado" prefWidth="80.0" text="Reiniciar" />
+      <Button fx:id="BtErorres" layoutX="412.0" layoutY="301.0" mnemonicParsing="false" onAction="#salirVistaResultado" prefWidth="80.0" text="Salir" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="31.0" layoutX="160.0" layoutY="236.0" stroke="WHITE" strokeType="INSIDE" width="29.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="31.0" layoutX="514.0" layoutY="236.0" stroke="WHITE" strokeType="INSIDE" width="29.0" />
-      <Label layoutX="170.0" layoutY="241.0" text="0" />
-      <Label layoutX="523.0" layoutY="241.0" text="0" />
+      <Label fx:id="ResultAciertos" layoutX="170.0" layoutY="241.0" text="0" />
+      <Label fx:id="ResultErrores" layoutX="523.0" layoutY="241.0" text="0" />
    </children>
 </AnchorPane>

@@ -2,6 +2,7 @@
  */
 package controladores;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
@@ -14,10 +15,12 @@ import javafx.scene.control.TextField;
 import java.util.Random;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -51,7 +54,7 @@ public class VistaJuegoController implements Initializable {
     @FXML
     private AnchorPane menuImagen;
     private Timeline timeline;
-    private int segundosTotales = 10;
+    private int segundosTotales = 7;
     private int segundosRestantes = segundosTotales;
     @FXML
     private ImageView bien;
@@ -187,6 +190,20 @@ public class VistaJuegoController implements Initializable {
     private void manejarFinTiempo(ActionEvent event) {
         barraProgreso.setProgress(0.0);
         timeline.stop();
+        
+                try {
+            // Cargar el archivo FXML de la vista de juego
+            Parent root = FXMLLoader.load(getClass().getResource("/vistas/VistaResultado.fxml"));
+            
+            // Crear una nueva escena con la vista de juego
+            Scene scene = new Scene(root);
+            
+            // Obtener la ventana actual y establecer la nueva escena
+            Stage stage = (Stage) menuImagen.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+        }
 
     }
      /**
